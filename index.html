@@ -232,6 +232,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/c++lesson2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李萱">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="____查无此人〆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/03/c++lesson2/" itemprop="url">c++ Lesson 2：const 关键字的用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T20:41:16+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、定义常量"><a href="#一、定义常量" class="headerlink" title="一、定义常量"></a>一、定义常量</h2><p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_VAL = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> SCHOOL_NAME = <span class="string">"HIT"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="二、定义常量指针"><a href="#二、定义常量指针" class="headerlink" title="二、定义常量指针"></a>二、定义常量指针</h2><p>注意：不可通过常量指针修改其指向的内容<br>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;n;</span><br><span class="line">*p = <span class="number">5</span>;  <span class="comment">//报错</span></span><br><span class="line">n = <span class="number">1314</span>;  <span class="comment">//正确</span></span><br><span class="line">p = &amp;m;  <span class="comment">//ok，常量指针的指向可以变化</span></span><br></pre></td></tr></table></figure>
+<p>注意：不能把常量指针赋值给非常量指针，反过来可以</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> *q;</span><br><span class="line">p = q;  <span class="comment">//ok</span></span><br><span class="line">q = p;  <span class="comment">//报错</span></span><br><span class="line">q = (<span class="keyword">int</span> *) p;  <span class="comment">//强转ok</span></span><br></pre></td></tr></table></figure>
+<p>函数参数为指针时，可以防止函数内部不小心修改参数指针所指地方的内容</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MyPrintf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *p = <span class="number">3</span>;  <span class="comment">//报错</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p);  <span class="comment">//ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、常引用"><a href="#三、常引用" class="headerlink" title="三、常引用"></a>三、常引用</h2><p>此部分参照Lesson 1</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/c++lesson1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -523,7 +651,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

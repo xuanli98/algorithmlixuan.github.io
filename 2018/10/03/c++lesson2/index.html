@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="一、定义常量例： 12const int MAX_VAL = 520;const string SCHOOL_NAME = &quot;HIT&quot;; 二、定义常量指针注意：不可通过常量指针修改其指向的内容例： 12345int n,m;const int *p = &amp;amp;n;*p = 5;  //报错n = 1314;  //正确p = &amp;amp;m;  //ok，常量指针的指向可以变化 注意：不能把常量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/10/02/hello-world/index.html">
+<meta property="og:title" content="c++ Lesson 2：const 关键字的用法">
+<meta property="og:url" content="http://yoursite.com/2018/10/03/c++lesson2/index.html">
 <meta property="og:site_name" content="____查无此人〆">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一、定义常量例： 12const int MAX_VAL = 520;const string SCHOOL_NAME = &quot;HIT&quot;; 二、定义常量指针注意：不可通过常量指针修改其指向的内容例： 12345int n,m;const int *p = &amp;amp;n;*p = 5;  //报错n = 1314;  //正确p = &amp;amp;m;  //ok，常量指针的指向可以变化 注意：不能把常量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T10:44:50.326Z">
+<meta property="og:updated_time" content="2018-10-03T12:41:16.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="c++ Lesson 2：const 关键字的用法">
+<meta name="twitter:description" content="一、定义常量例： 12const int MAX_VAL = 520;const string SCHOOL_NAME = &quot;HIT&quot;; 二、定义常量指针注意：不可通过常量指针修改其指向的内容例： 12345int n,m;const int *p = &amp;amp;n;*p = 5;  //报错n = 1314;  //正确p = &amp;amp;m;  //ok，常量指针的指向可以变化 注意：不能把常量">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/02/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/03/c++lesson2/"/>
 
 
 
 
 
-  <title>Hello World | ____查无此人〆</title>
+  <title>c++ Lesson 2：const 关键字的用法 | ____查无此人〆</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/c++lesson2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李萱">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">c++ Lesson 2：const 关键字的用法</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T18:44:50+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T20:41:16+08:00">
+                2018-10-03
               </time>
             
 
@@ -299,15 +299,15 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="一、定义常量"><a href="#一、定义常量" class="headerlink" title="一、定义常量"></a>一、定义常量</h2><p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_VAL = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> SCHOOL_NAME = <span class="string">"HIT"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="二、定义常量指针"><a href="#二、定义常量指针" class="headerlink" title="二、定义常量指针"></a>二、定义常量指针</h2><p>注意：不可通过常量指针修改其指向的内容<br>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;n;</span><br><span class="line">*p = <span class="number">5</span>;  <span class="comment">//报错</span></span><br><span class="line">n = <span class="number">1314</span>;  <span class="comment">//正确</span></span><br><span class="line">p = &amp;m;  <span class="comment">//ok，常量指针的指向可以变化</span></span><br></pre></td></tr></table></figure>
+<p>注意：不能把常量指针赋值给非常量指针，反过来可以</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> *q;</span><br><span class="line">p = q;  <span class="comment">//ok</span></span><br><span class="line">q = p;  <span class="comment">//报错</span></span><br><span class="line">q = (<span class="keyword">int</span> *) p;  <span class="comment">//强转ok</span></span><br></pre></td></tr></table></figure>
+<p>函数参数为指针时，可以防止函数内部不小心修改参数指针所指地方的内容</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MyPrintf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *p = <span class="number">3</span>;  <span class="comment">//报错</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p);  <span class="comment">//ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、常引用"><a href="#三、常引用" class="headerlink" title="三、常引用"></a>三、常引用</h2><p>此部分参照Lesson 1</p>
 
       
     </div>
@@ -332,15 +332,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/03/c++lesson1/" rel="next" title="c++ Lesson 1：引用">
+                <i class="fa fa-chevron-left"></i> c++ Lesson 1：引用
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/03/c++lesson1/" rel="prev" title="c++ Lesson 1：引用">
-                c++ Lesson 1：引用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,7 +454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、定义常量"><span class="nav-number">1.</span> <span class="nav-text">一、定义常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、定义常量指针"><span class="nav-number">2.</span> <span class="nav-text">二、定义常量指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、常引用"><span class="nav-number">3.</span> <span class="nav-text">三、常引用</span></a></li></ol></div>
             
 
           </div>
