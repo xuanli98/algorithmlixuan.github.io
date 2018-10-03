@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="我有一头小毛驴，可是我从来都不骑。">
+<meta name="description" content="一、引用的概念形式：类型名 &amp;amp; 引用名 = 某变量名;注意：定义某个引用时一定要将其初始化为某个引用变量。 12int n = 520;int &amp;amp; r = n; 某个变量的引用，等价于这个变量相当于这个变量的别名 123456int n = 520;int &amp;amp; r = n;cout &amp;lt;&amp;lt; r;  //输出 520cout &amp;lt;&amp;lt; n;  n = 131">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Night">
-<meta property="og:url" content="http://yoursite.com/2018/10/02/FirstNight/index.html">
+<meta property="og:title" content="c++ Lesson1:引用">
+<meta property="og:url" content="http://yoursite.com/2018/10/03/c++lesson1/index.html">
 <meta property="og:site_name" content="____查无此人〆">
-<meta property="og:description" content="我有一头小毛驴，可是我从来都不骑。">
+<meta property="og:description" content="一、引用的概念形式：类型名 &amp;amp; 引用名 = 某变量名;注意：定义某个引用时一定要将其初始化为某个引用变量。 12int n = 520;int &amp;amp; r = n; 某个变量的引用，等价于这个变量相当于这个变量的别名 123456int n = 520;int &amp;amp; r = n;cout &amp;lt;&amp;lt; r;  //输出 520cout &amp;lt;&amp;lt; n;  n = 131">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T10:45:34.967Z">
+<meta property="og:updated_time" content="2018-10-03T01:27:20.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Night">
-<meta name="twitter:description" content="我有一头小毛驴，可是我从来都不骑。">
+<meta name="twitter:title" content="c++ Lesson1:引用">
+<meta name="twitter:description" content="一、引用的概念形式：类型名 &amp;amp; 引用名 = 某变量名;注意：定义某个引用时一定要将其初始化为某个引用变量。 12int n = 520;int &amp;amp; r = n; 某个变量的引用，等价于这个变量相当于这个变量的别名 123456int n = 520;int &amp;amp; r = n;cout &amp;lt;&amp;lt; r;  //输出 520cout &amp;lt;&amp;lt; n;  n = 131">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/02/FirstNight/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/03/c++lesson1/"/>
 
 
 
 
 
-  <title>First Night | ____查无此人〆</title>
+  <title>c++ Lesson1:引用 | ____查无此人〆</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/FirstNight/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/c++lesson1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李萱">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">First Night</h1>
+          <h1 class="post-title" itemprop="name headline">c++ Lesson1:引用</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T18:45:34+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T09:27:20+08:00">
+                2018-10-03
               </time>
             
 
@@ -299,9 +299,17 @@
       
 
       
-        <blockquote>
-<p>我有一头<strong>小毛驴</strong>，可是我从来都不骑。</p>
-</blockquote>
+        <h2 id="一、引用的概念"><a href="#一、引用的概念" class="headerlink" title="一、引用的概念"></a>一、引用的概念</h2><p>形式：类型名 &amp; 引用名 = 某变量名;<br>注意：定义某个引用时一定要将其<strong>初始化</strong>为某个引用变量。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">int</span> &amp; r = n;</span><br></pre></td></tr></table></figure>
+<p>某个变量的引用，等价于这个变量相当于这个变量的别名</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int n = <span class="number">520</span>;</span><br><span class="line">int <span class="meta">&amp; r = n;</span></span><br><span class="line">cout &lt;&lt; r;  <span class="comment">//输出 520</span></span><br><span class="line">cout &lt;&lt; n;  </span><br><span class="line">n = <span class="number">1314</span>;</span><br><span class="line">cout &lt;&lt; r;  <span class="comment">//输出 1314</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、引用的应用"><a href="#二、引用的应用" class="headerlink" title="二、引用的应用"></a>二、引用的应用</h2><p>在某些情况下可以替代指针, 省去了一些指针的烦恼<br>例：两数交换<br>C语言：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    tmp = *a; *a = *b; *b =tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n1, n2;</span><br><span class="line">swap(&amp;n1,&amp;n2);</span><br></pre></td></tr></table></figure></p>
+<p>C++:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    tmp = a; a = b; b = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n1, n2;</span><br><span class="line">swap(n1,n2);</span><br></pre></td></tr></table></figure></p>
+<p>引用作为函数的返回值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp; <span class="title">SetValue</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> n; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    SetValue() = <span class="number">1314</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n;  <span class="comment">//输出 1314;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、常引用"><a href="#三、常引用" class="headerlink" title="三、常引用"></a>三、常引用</h2><p>不能通过常引用来修改其引用内容</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</span><br><span class="line">r = <span class="number">1314</span>;  <span class="comment">//报错</span></span><br><span class="line">n = <span class="number">521</span>;   <span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<p>注意：const T 类型的常变量和const T &amp; 类型的引用则不能用于初始化T &amp; 类型的引用，因为如果修改了T &amp; 类型的引用则常引用也会修改这样会报错。</p>
 
       
     </div>
@@ -386,8 +394,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -429,6 +446,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、引用的概念"><span class="nav-number">1.</span> <span class="nav-text">一、引用的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、引用的应用"><span class="nav-number">2.</span> <span class="nav-text">二、引用的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、常引用"><span class="nav-number">3.</span> <span class="nav-text">三、常引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
