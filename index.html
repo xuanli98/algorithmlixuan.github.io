@@ -303,20 +303,18 @@
       
         
           
-            <h2 id="一、用new运算符实现动态内存分配"><a href="#一、用new运算符实现动态内存分配" class="headerlink" title="一、用new运算符实现动态内存分配"></a>一、用new运算符实现动态内存分配</h2><p>第一种用法，分配一个变量</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">P = <span class="keyword">new</span> T;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *T是任意类型名，P是类型为T*的指针</span></span><br><span class="line"><span class="comment"> *动态分配出一片大小为sizeof(T)字节的内存空间</span></span><br><span class="line"><span class="comment"> *并将改内存的起始地址赋值给P</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<p>举一个具体的栗子：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p;</span><br><span class="line">p = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">*p = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-<p>第二种用法，分配一个数组</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * T :任意类型名</span></span><br><span class="line"><span class="comment"> * P :类型为T*的指针</span></span><br><span class="line"><span class="comment"> * N :要分配的数组元素的个数，可以是整型表达式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">P = <span class="keyword">new</span> T[N];</span><br><span class="line"><span class="comment">//动态分配出一片sizeof(T)*N字节的内存空间</span></span><br><span class="line"><span class="comment">//并且内存空间的起始地址赋值给P。</span></span><br></pre></td></tr></table></figure>
-<p>动态分配数组实例：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *pn;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">pn = <span class="keyword">new</span> <span class="keyword">int</span>[i*<span class="number">50</span>];</span><br><span class="line">pn[<span class="number">0</span>] = <span class="number">520</span>;  <span class="comment">//ok</span></span><br><span class="line">pn[<span class="number">100</span>] = <span class="number">1314</span>;  <span class="comment">//编译没问题，运行时数组越界</span></span><br></pre></td></tr></table></figure>
-<h2 id="二、用delete运算符释放动态分配内存"><a href="#二、用delete运算符释放动态分配内存" class="headerlink" title="二、用delete运算符释放动态分配内存"></a>二、用delete运算符释放动态分配内存</h2><p>注意：用new动态分配的内存空间，一定要用delete运算符释放，否则会产生内存垃圾，这样会被资深程序猿diss的嘻嘻，而且不能delete多次会导致异常。<br>举个栗子：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">*p = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">delete</span> p;</span><br><span class="line"><span class="keyword">delete</span> p;  <span class="comment">//多次delete同一片空间会产生异常</span></span><br></pre></td></tr></table></figure>
-<p>用delete释放动态分配的数组，要加”[]”<br>举个栗子：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">delete</span> [] p;</span><br></pre></td></tr></table></figure>
-
-          
+          一、用new运算符实现动态内存分配第一种用法，分配一个变量
+123456P = new T;/* *T是任意类型名，P是类型为T*的指针 *动态分配出一片大小为sizeof(T)字节的内存空间 *并将改内存的起始地址赋值给P */
+举一个具体的栗子：
+123int *p;p = new int;*p
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/05/c++lesson3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -434,17 +432,18 @@
       
         
           
-            <h2 id="一、定义常量"><a href="#一、定义常量" class="headerlink" title="一、定义常量"></a>一、定义常量</h2><p>例：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_VAL = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">string</span> SCHOOL_NAME = <span class="string">"HIT"</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="二、定义常量指针"><a href="#二、定义常量指针" class="headerlink" title="二、定义常量指针"></a>二、定义常量指针</h2><p>注意：不可通过常量指针修改其指向的内容<br>例：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;n;</span><br><span class="line">*p = <span class="number">5</span>;  <span class="comment">//报错</span></span><br><span class="line">n = <span class="number">1314</span>;  <span class="comment">//正确</span></span><br><span class="line">p = &amp;m;  <span class="comment">//ok，常量指针的指向可以变化</span></span><br></pre></td></tr></table></figure>
-<p>注意：不能把常量指针赋值给非常量指针，反过来可以</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> *q;</span><br><span class="line">p = q;  <span class="comment">//ok</span></span><br><span class="line">q = p;  <span class="comment">//报错</span></span><br><span class="line">q = (<span class="keyword">int</span> *) p;  <span class="comment">//强转ok</span></span><br></pre></td></tr></table></figure>
-<p>函数参数为指针时，可以防止函数内部不小心修改参数指针所指地方的内容</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MyPrintf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *p = <span class="number">3</span>;  <span class="comment">//报错</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p);  <span class="comment">//ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="三、常引用"><a href="#三、常引用" class="headerlink" title="三、常引用"></a>三、常引用</h2><p>此部分参照Lesson 1</p>
-
-          
+          一、定义常量例：
+12const int MAX_VAL = 520;const string SCHOOL_NAME = "HIT";
+二、定义常量指针注意：不可通过常量指针修改其指向的内容例：
+12345int n,m;const int *p = &amp;n;*p = 5;  //报错n =
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/03/c++lesson2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -562,147 +561,18 @@
       
         
           
-            <h2 id="一、引用的概念"><a href="#一、引用的概念" class="headerlink" title="一、引用的概念"></a>一、引用的概念</h2><p>形式：类型名 &amp; 引用名 = 某变量名;<br>注意：定义某个引用时一定要将其<strong>初始化</strong>为某个引用变量。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">int</span> &amp; r = n;</span><br></pre></td></tr></table></figure>
-<p>某个变量的引用，等价于这个变量相当于这个变量的别名</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int n = <span class="number">520</span>;</span><br><span class="line">int <span class="meta">&amp; r = n;</span></span><br><span class="line">cout &lt;&lt; r;  <span class="comment">//输出 520</span></span><br><span class="line">cout &lt;&lt; n;  </span><br><span class="line">n = <span class="number">1314</span>;</span><br><span class="line">cout &lt;&lt; r;  <span class="comment">//输出 1314</span></span><br></pre></td></tr></table></figure>
-<h2 id="二、引用的应用"><a href="#二、引用的应用" class="headerlink" title="二、引用的应用"></a>二、引用的应用</h2><p>在某些情况下可以替代指针, 省去了一些指针的烦恼<br>例：两数交换<br>C语言：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    tmp = *a; *a = *b; *b =tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n1, n2;</span><br><span class="line">swap(&amp;n1,&amp;n2);</span><br></pre></td></tr></table></figure></p>
-<p>C++:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    tmp = a; a = b; b = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n1, n2;</span><br><span class="line">swap(n1,n2);</span><br></pre></td></tr></table></figure></p>
-<p>引用作为函数的返回值</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp; <span class="title">SetValue</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> n; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    SetValue() = <span class="number">1314</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n;  <span class="comment">//输出 1314;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="三、常引用"><a href="#三、常引用" class="headerlink" title="三、常引用"></a>三、常引用</h2><p>不能通过常引用来修改其引用内容</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">520</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</span><br><span class="line">r = <span class="number">1314</span>;  <span class="comment">//报错</span></span><br><span class="line">n = <span class="number">521</span>;   <span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-<p>注意：const T 类型的常变量和const T &amp; 类型的引用则不能用于初始化T &amp; 类型的引用，因为如果修改了T &amp; 类型的引用则常变量或者常引用也会修改，这样会报错。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李萱">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="____查无此人〆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/02/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T18:44:50+08:00">
-                2018-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          一、引用的概念形式：类型名 &amp; 引用名 = 某变量名;注意：定义某个引用时一定要将其初始化为某个引用变量。
+12int n = 520;int &amp; r = n;
+某个变量的引用，等价于这个变量相当于这个变量的别名
+123456int n = 520;int &amp; r = n;c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/03/c++lesson1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -782,7 +652,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1013,3 +883,6 @@
 
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
