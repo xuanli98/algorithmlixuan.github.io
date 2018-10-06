@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-05T04:24:04.149Z</updated>
+  <updated>2018-10-06T12:33:58.032Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++ Lession 4：内联函数，函数重载，函数缺省参数</title>
+    <link href="http://yoursite.com/2018/10/06/c++lession4/"/>
+    <id>http://yoursite.com/2018/10/06/c++lession4/</id>
+    <published>2018-10-06T12:33:58.032Z</published>
+    <updated>2018-10-06T12:33:58.032Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、内联函数"><a href="#一、内联函数" class="headerlink" title="一、内联函数"></a>一、内联函数</h2><blockquote><p>前言：函数调用是有时间开销的，如果函数本身只有几行代码，而且执行很快，那么相比下调用函数所产生的这个开销就会显得比较大。</p></blockquote><p>为了减少函数调用的开销，就引入<font color="#FF4500">内联函数</font>机制。编译器处理对内联函数的调用语句，是将整个函数的代码插入到调用语句处，而不会产生调用语句。<br>举个栗子：</p><p><img src="/image/lession4.png" alt=""></p><p>但内联函数也是有缺点的，以下列出了内联函数的优缺点：</p><table><thead><tr><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td>1. 内联函数代码被放入符号表中，在使用时进行替换，和宏展开一样，效率很高</td><td>1. 不允许过多的代码，代码过多的话会造成大的内存消耗，最好在5行以内</td></tr><tr><td>2. 编绎器在调用一个内联函数，首先会检查参数问题，保证调用正确，与对待普通的函数一样，消除了隐患及局限性</td><td>2. 不允许有循环或者开关语句，如果有的话，执行函数代码时间比调用开销大</td></tr><tr><td>3.与其它函数一样，可以使用所在类的保护成员及私有成员</td><td>(没找到Markdown怎么插入空表格，嘻嘻)</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、内联函数&quot;&gt;&lt;a href=&quot;#一、内联函数&quot; class=&quot;headerlink&quot; title=&quot;一、内联函数&quot;&gt;&lt;/a&gt;一、内联函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;前言：函数调用是有时间开销的，如果函数本身只有几行代码，而且执行很快，那么相比下调
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>c++ Lesson 3：动态内存分配</title>
