@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[c++ Lession 4：内联函数，函数重载，函数缺省参数]]></title>
+    <url>%2F2018%2F10%2F11%2Fc%2B%2Blession4%2F</url>
+    <content type="text"><![CDATA[一、内联函数 前言：函数调用是有时间开销的，如果函数本身只有几行代码，而且执行很快，那么相比下调用函数所产生的这个开销就会显得比较大。 为了减少函数调用的开销，就引入内联函数机制。编译器处理对内联函数的调用语句，是将整个函数的代码插入到调用语句处，而不会产生调用语句，关键字为inline。举个栗子： 但内联函数也是有缺点的，以下列出了内联函数的优缺点： 优点 缺点 1. 内联函数代码被放入符号表中，在使用时进行替换，和宏展开一样，效率很高 1. 不允许过多的代码，代码过多的话会造成大的内存消耗，最好在5行以内 2. 编绎器在调用一个内联函数，首先会检查参数问题，保证调用正确，与对待普通的函数一样，消除了隐患及局限性 2. 不允许有循环或者开关语句，如果有的话，执行函数代码时间比调用开销大 3.与其它函数一样，可以使用所在类的保护成员及私有成员 (没找到Markdown怎么插入空表格，嘻嘻) 二、函数重载定义：一个或多个函数名字相同，但是参数个数或参数类型不同，这叫做函数重载。编译器根据函数的实参个数和类型来判断应该调用哪个函数。 优点：函数重载使函数命名更加简单。 举个栗子： 1234567int Min(double x1,double x2)&#123; &#125; //(1)int Min(int x1,int x2)&#123; &#125; //(2)int Min(int x1,int x2,int x3)&#123; &#125; //(3)Min(3.2,2.3); //调用(1)Min(2,4); //调用(2)Min(3,4,5); //调用(3) 三、函数缺省参数c++中，定义函数可以让最右边连续若干个参数有缺省值，那么调用函数的时候，若干位置不写参数时，参数就是缺省值。 优点：提高程序的可扩充性，即如果有些函数要增加新的参数，原来调用这个函数的语句未必要使用这个参数，那么为了避免对那些函数进行修改，可以采用缺省参数。 举个栗子： 12345void love(int x,int y = 3,int z = 4) &#123; &#125;love(520); //等价于love(520,3,4);love(520,1314); //等价于love(520,1314,4);love(10, ,8); //报错，只能最右边连续参数缺省。]]></content>
+      <categories>
+        <category>c++教程</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++ Lesson 3：动态内存分配]]></title>
+    <url>%2F2018%2F10%2F11%2Fc%2B%2Blesson3%2F</url>
+    <content type="text"><![CDATA[一、用new运算符实现动态内存分配第一种用法，分配一个变量 123456P = new T;/* *T是任意类型名，P是类型为T*的指针 *动态分配出一片大小为sizeof(T)字节的内存空间 *并将改内存的起始地址赋值给P */ 举一个具体的栗子： 123int *p;p = new int;*p = 5; 第二种用法，分配一个数组 12345678/* * T :任意类型名 * P :类型为T*的指针 * N :要分配的数组元素的个数，可以是整型表达式 */P = new T[N];//动态分配出一片sizeof(T)*N字节的内存空间//并且内存空间的起始地址赋值给P。 动态分配数组实例： 12345int *pn;int i = 5;pn = new int[i*50];pn[0] = 520; //okpn[100] = 1314; //编译没问题，运行时数组越界 二、用delete运算符释放动态分配内存注意：用new动态分配的内存空间，一定要用delete运算符释放，否则会产生内存垃圾，这样会被资深程序猿diss的嘻嘻，而且不能delete多次会导致异常。举个栗子： 1234int *p = new int;*p = 520;delete p;delete p; //多次delete同一片空间会产生异常 用delete释放动态分配的数组，要加”[]”举个栗子： 123int *p = new int[20];p[0] = 1;delete [] p;]]></content>
+      <categories>
+        <category>c++教程</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++ Lesson 2：const 关键字的用法]]></title>
+    <url>%2F2018%2F10%2F11%2Fc%2B%2Blesson2%2F</url>
+    <content type="text"><![CDATA[一、定义常量例： 12const int MAX_VAL = 520;const string SCHOOL_NAME = "HIT"; 二、定义常量指针注意：不可通过常量指针修改其指向的内容例： 12345int n,m;const int *p = &amp;n;*p = 5; //报错n = 1314; //正确p = &amp;m; //ok，常量指针的指向可以变化 注意：不能把常量指针赋值给非常量指针，反过来可以 12345const int *p;int *q;p = q; //okq = p; //报错q = (int *) p; //强转ok 函数参数为指针时，可以防止函数内部不小心修改参数指针所指地方的内容 12345void MyPrintf(const int *p)&#123; *p = 3; //报错 printf("%d",*p); //ok&#125; 三、常引用此部分参照Lesson 1]]></content>
+      <categories>
+        <category>c++教程</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++ Lesson 1：引用]]></title>
+    <url>%2F2018%2F10%2F11%2Fc%2B%2Blesson1%2F</url>
+    <content type="text"><![CDATA[一、引用的概念形式：类型名 &amp; 引用名 = 某变量名;注意：定义某个引用时一定要将其初始化为某个引用变量。 12int n = 520;int &amp; r = n; 某个变量的引用，等价于这个变量相当于这个变量的别名 123456int n = 520;int &amp; r = n;cout &lt;&lt; r; //输出 520cout &lt;&lt; n; n = 1314;cout &lt;&lt; r; //输出 1314 二、引用的应用在某些情况下可以替代指针, 省去了一些指针的烦恼例：两数交换C语言：1234567void swap(int *a, int *b)&#123; int tmp; tmp = *a; *a = *b; *b =tmp;&#125;int n1, n2;swap(&amp;n1,&amp;n2); C++:1234567void swap(int &amp;a, int &amp;b)&#123; int tmp; tmp = a; a = b; b = tmp;&#125;int n1, n2;swap(n1,n2); 引用作为函数的返回值 12345678int n = 520;int &amp; SetValue() &#123; return n; &#125;int main()&#123; SetValue() = 1314; cout &lt;&lt; n; //输出 1314; return 0;&#125; 三、常引用不能通过常引用来修改其引用内容 1234int n = 520;const int &amp;r = n;r = 1314; //报错n = 521; //正确 注意：const T 类型的常变量和const T &amp; 类型的引用则不能用于初始化T &amp; 类型的引用，因为如果修改了T &amp; 类型的引用则常变量或者常引用也会修改，这样会报错。]]></content>
+      <categories>
+        <category>c++教程</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+</search>
